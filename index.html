@@ -1,46 +1,311 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-<body class="container"> 
-    <header class="header"> 
-       <h3> The Header</h3>
-    </header>
-  
-    <nav class="nav">
-        <ul>
-            <li> <a href="">nav 1</a></li>
-            <li> <a href="">nav 2</a></li>
-            <li> <a href="">nav 3</a></li>
-        </ul>
-    </nav>
-   
-    <main class="main">
-       <article>
-        <h3>Main Article 1</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure voluptatibus molestias sunt consectetur, repellendus iusto eaque velit mollitia maxime cumque ipsa officia perspiciatis debitis ipsam quia, nobis eos quod. Esse.</p>
-       </article>
-       <article>
-        <h3>Main Article 2</h3>
-        <p>Totam eligendi ratione excepturi sapiente debitis quo harum recusandae cum enim hic? Veritatis voluptas, quo id architecto distinctio officiis dolorum ea possimus minima corporis quibusdam facere suscipit ipsam rem iusto!</p>
-       </article>
-    </main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <!-- fonawsome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-       <aside>
-        <div class="sidebar">
-          <h4>sidebar</h4>
-        </div>
-        <div class="advertise">
-            <h4>Advertise</h4>
-        </div>
-       </aside>
+    <!-- css link -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Div Projects</title>
+  </head>
+  <body class="w-full h-full bg-[#f4f7ff]">
+    <section class="container mx-auto px-8 flex flex-col gap-y-3">
+      <!-- header section -->
 
-       <footer class="footer">
-          <h3> The Footer </h3>
-       </footer>
-</body>
+      <div
+        class="h-24 bg-white p-4 mt-3 rounded-2xl shadow-sm flex items-center justify-between px-4"
+      >
+        <!-- item-logo -->
+        <div class="logo-item">
+          <a href="/" class="flex items-center gap-x-3">
+            <img src="assets/logo.png" alt="" class="h-10 w-auto" />
+            <h1 class="text-3xl font-light text-gray-900">
+              Dev <span class="font-semibold"> Board </span>
+            </h1>
+          </a>
+        </div>
+
+        <!-- CountNUmber and color -->
+        <div class="flex gap-x-6">
+          <div
+            class="w-28 h-16 flex items-center justify-center rounded-full bg-[#f4f7ff] gap-x-3 px-3"
+          >
+            <i class="fa-solid fa-square-check text-[40px] text-blue-600"> </i>
+            <h1
+              id="countNumber"
+              class="text-gray-900 font-semibold text-3xl"
+            ></h1>
+          </div>
+
+          <div
+            class="w-16 h-16 flex justify-center items-center rounded-full bg-[#f4f7ff] cursor-pointer"
+          >
+            <button id="theme-btn" class="cursor-pointer">
+              <img src="assets/theme-btn.png" alt="" />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- date and calender point -->
+      <div class="flex justify-between">
+        <div
+          class="w-[77%] h-[calc(100vh-130px)] bg-white rounded-2xl shadow-sm p-3"
+        >
+          <div
+            class="grid grid-cols-4 gap-4 border-b-2 border-dashed border-[#3752fd33] pb-6"
+          >
+            <div
+              class="bg-[#f4f7ff] h-32 rounded-lg shadow-sm flex justify-center items-center gap-x-9"
+            >
+              <div
+                class="w-14 h-14 flex justify-center items-center rounded-full bg-white ring-1 ring-blue-600"
+              >
+                <i class="fa-solid fa-square-check text-blue-600 text-3xl"></i>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-base text-gray-500">Task Assigned</span>
+                <h1 id="pointCount" class="text-3xl font-semibold"></h1>
+              </div>
+            </div>
+            <div
+              id="change-page"
+              class="col-span-2 h-32 rounded-lg flex items-center justify-start pl-10 gap-x-5 color-theme shadow-sm cursor-pointer"
+            >
+              <div
+                class="w-20 h-20 flex items-center justify-center border-[1.5px] border-dashed border-yellow-400"
+              >
+                <img src="assets/board.png" class="w-16 h-auto" alt="" />
+              </div>
+              <h1 class="text-3xl font-medium text-black">
+                Discover Something <br />
+                New Today!
+              </h1>
+            </div>
+            <div
+              class="bg-[#f4f7ff] h-32 rounded-lg shadow-sm flex justify-center items-center gap-x-9"
+            >
+              <div
+                class="w-14 h-14 flex justify-center items-center rounded-full bg-white ring-1 ring-blue-600"
+              >
+                <i class="fa-solid fa-calendar text-blue-600 text-2xl"></i>
+              </div>
+              <div class="flex flex-col text-xl">
+                <span id="timeToday">Wed,</span>
+                <span id="allDocument" class="font-bold">Jul 28 2025</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- middle point -->
+          <div
+            class="flex flex-wrap pt-4 justify-between gap-y-3"
+            id="cardContainer"
+             >
+            <div
+              class="bg-[#f4f7ff] flex flex-col items-start shadow-sm px-6 py-5 w-[360px] h-72 cardsItem rounded-lg"
+             >
+              <div class="mobileItem">
+                <span class="px-3 py-2 bg-white rounded-lg">ShopEase</span>
+                <h1 class="text-2xl font-semibold text-gray-900 mt-3 title">
+                  Fix Mobile Button Issue
+                </h1>
+              </div>
+              <div class="bg-white p-3 mt-2 rounded-md">
+                <p class="text-gray-700">
+                  Debug using Chrome DevTools check for overlapping elements,
+                  and ensure onClick works
+                </p>
+              </div>
+              <div class="flex gap-x-20 items-center mt-4">
+                <div class="flex flex-col">
+                  <span class="text-gray-500 text-sm">Deadline</span>
+                  <span class="text-gray-900 font-semibold">21 March 2025</span>
+                </div>
+                <button
+                  class="completebtn px-3 py-2 rounded-xl bg-blue-600 text-white font-medium selectedButton"
+                >
+                  Completed
+                </button>
+              </div>
+            </div>
+            <div
+            class="bg-[#f4f7ff] flex flex-col items-start shadow-sm px-6 py-5 w-[360px] h-72 cardsItem rounded-lg"
+           >
+            <div class="mobileItem">
+              <span class="px-3 py-2 bg-white rounded-lg">ShopEase</span>
+              <h1 class="text-2xl font-semibold text-gray-900 mt-3 title">
+                Fix Mobile Button Issue
+              </h1>
+            </div>
+            <div class="bg-white p-3 mt-2 rounded-md">
+              <p class="text-gray-700">
+                Debug using Chrome DevTools check for overlapping elements,
+                and ensure onClick works
+              </p>
+            </div>
+            <div class="flex gap-x-20 items-center mt-4">
+              <div class="flex flex-col">
+                <span class="text-gray-500 text-sm">Deadline</span>
+                <span class="text-gray-900 font-semibold">21 March 2025</span>
+              </div>
+              <button
+                class="completebtn px-3 py-2 rounded-xl bg-blue-600 text-white font-medium selectedButton"
+              >
+                Completed
+              </button>
+            </div>
+          </div>
+          <div
+          class="bg-[#f4f7ff] flex flex-col items-start shadow-sm px-6 py-5 w-[360px] h-72 cardsItem rounded-lg"
+         >
+          <div class="mobileItem">
+            <span class="px-3 py-2 bg-white rounded-lg">ShopEase</span>
+            <h1 class="text-2xl font-semibold text-gray-900 mt-3 title">
+              Fix Mobile Button Issue
+            </h1>
+          </div>
+          <div class="bg-white p-3 mt-2 rounded-md">
+            <p class="text-gray-700">
+              Debug using Chrome DevTools check for overlapping elements,
+              and ensure onClick works
+            </p>
+          </div>
+          <div class="flex gap-x-20 items-center mt-4">
+            <div class="flex flex-col">
+              <span class="text-gray-500 text-sm">Deadline</span>
+              <span class="text-gray-900 font-semibold">21 March 2025</span>
+            </div>
+            <button
+              class="completebtn px-3 py-2 rounded-xl bg-blue-600 text-white font-medium selectedButton"
+            >
+              Completed
+            </button>
+          </div>
+        </div>
+        <div
+              class="bg-[#f4f7ff] flex flex-col items-start shadow-sm px-6 py-5 w-[360px] h-72 cardsItem rounded-lg"
+             >
+              <div class="mobileItem">
+                <span class="px-3 py-2 bg-white rounded-lg">ShopEase</span>
+                <h1 class="text-2xl font-semibold text-gray-900 mt-3 title">
+                  Fix Mobile Button Issue
+                </h1>
+              </div>
+              <div class="bg-white p-3 mt-2 rounded-md">
+                <p class="text-gray-700">
+                  Debug using Chrome DevTools check for overlapping elements,
+                  and ensure onClick works
+                </p>
+              </div>
+              <div class="flex gap-x-20 items-center mt-4">
+                <div class="flex flex-col">
+                  <span class="text-gray-500 text-sm">Deadline</span>
+                  <span class="text-gray-900 font-semibold">21 March 2025</span>
+                </div>
+                <button
+                  class="completebtn px-3 py-2 rounded-xl bg-blue-600 text-white font-medium selectedButton"
+                >
+                  Completed
+                </button>
+              </div>
+            </div>
+            <div
+            class="bg-[#f4f7ff] flex flex-col items-start shadow-sm px-6 py-5 w-[360px] h-72 cardsItem rounded-lg"
+           >
+            <div class="mobileItem">
+              <span class="px-3 py-2 bg-white rounded-lg">ShopEase</span>
+              <h1 class="text-2xl font-semibold text-gray-900 mt-3 title">
+                Fix Mobile Button Issue
+              </h1>
+            </div>
+            <div class="bg-white p-3 mt-2 rounded-md">
+              <p class="text-gray-700">
+                Debug using Chrome DevTools check for overlapping elements,
+                and ensure onClick works
+              </p>
+            </div>
+            <div class="flex gap-x-20 items-center mt-4">
+              <div class="flex flex-col">
+                <span class="text-gray-500 text-sm">Deadline</span>
+                <span class="text-gray-900 font-semibold">21 March 2025</span>
+              </div>
+              <button
+                class="completebtn px-3 py-2 rounded-xl bg-blue-600 text-white font-medium selectedButton"
+              >
+                Completed
+              </button>
+            </div>
+          </div>
+          <div
+              class="bg-[#f4f7ff] flex flex-col items-start shadow-sm px-6 py-5 w-[360px] h-72 cardsItem rounded-lg"
+             >
+              <div class="mobileItem">
+                <span class="px-3 py-2 bg-white rounded-lg">ShopEase</span>
+                <h1 class="text-2xl font-semibold text-gray-900 mt-3 title">
+                  Fix Mobile Button Issue
+                </h1>
+              </div>
+              <div class="bg-white p-3 mt-2 rounded-md">
+                <p class="text-gray-700">
+                  Debug using Chrome DevTools check for overlapping elements,
+                  and ensure onClick works
+                </p>
+              </div>
+              <div class="flex gap-x-20 items-center mt-4">
+                <div class="flex flex-col">
+                  <span class="text-gray-500 text-sm">Deadline</span>
+                  <span class="text-gray-900 font-semibold">21 March 2025</span>
+                </div>
+                <button
+                  class="completebtn px-3 py-2 rounded-xl bg-blue-600 text-white font-medium selectedButton"
+                >
+                  Completed
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section
+          class="w-[22%]  bg-white rounded-3xl shadow-sm h-[calc(100vh-130px)]"
+        >
+          <div
+            class="flex flex-col justify-center items-center py-8 gap-y-3 border-b-2 border-dashed border-blue-300"
+          >
+            <div class="flex gap-x-2 items-center">
+              <i class="ri-history-line font-medium text-2xl"></i>
+              <h2 class="text-xl font-medium text-gray-900">Activity Log</h2>
+            </div>
+
+          <div>
+            <button
+        id="historyFinish"
+            class="px-2.5 py-1.5 rounded-lg text-white bg-blue-600"
+          >
+            Clear History
+          </button>
+          
+          </div>
+          </div>
+          <div
+            id="historyDocument"
+            class="overflow-y-auto flex flex-col items-center gap-y-2 py-4 px-4"
+          ></div>
+        </section>
+      </div>
+    </section>
+
+    <script src="java.js"></script>
+  </body>
 </html>

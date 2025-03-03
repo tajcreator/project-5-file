@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title> different web</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      * {
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="w-full h-full bg-[#f4f7ff]">
+    <section class="container mx-auto px-8">
+      <div
+        class="h-24 bg-white p-4 mt-5 rounded-2xl shadow-sm flex items-center justify-between px-4"
+      >
+       
+        <div id="icon">
+          <a href="/" class="flex items-center gap-x-2.5">
+            <img src="../assets/logo.png" alt="Logo" class="h-10 w-auto" />
+            <h1 class="font-light text-3xl text-gray-800">
+              Dev<span class="font-semibold">Board</span>
+            </h1>
+          </a>
+        </div>
+      
+        <div class="flex gap-x-6">
+          <a href="../index.html"
+            ><button
+              class="px-3 py-2 rounded-xl bg-blue-600 text-white font-medium"
+            >
+              Back to Desk
+            </button></a
+          >
+        </div>
+      </div>
+   
+      <div class="flex flex-col gap-y-5 items-center justify-center my-4">
+        <h1 class="text-3xl font-semibold">Blogs</h1>
+        <div class="flex flex-col gap-y-6">
+          <div class="">
+            <div
+              class="w-full px-4 py-3 bg-white text-xl font-semibold pb-5 border-b-2 border-dashed border-gray-300 rounded-lg"
+            >
+              Question-1:What are the different ways to select an element in the
+              DOM?
+            </div>
+            <div class="px-3 py-4 bg-white leading-9 text-lg">
+                There are 5 ways in which you can select elements in a DOM using selectors.
+                getElementsByTagName()
+                getElementsByClassName()
+                getElementById()
+                querySelector()
+                querySelectorAll()
+            </div>
+          </div>
+          <div>
+            <div
+              class="w-full px-4 py-3 bg-white text-xl font-semibold pb-5 border-b-2 border-dashed border-gray-300 rounded-lg"
+            >
+            Question-2: what is the different between innerHTML, innerText, and textContent?
+            </div>
+            <div class="px-3 py-4 bg-white leading-9 text-lg">
+                textContents is all text contained by an element and all its children that are for formatting purposes only. innerText returns all text contained by an element and all its child elements. innerHtml returns all text, including html tags, that is contained by an element.
+            </div>
+          </div>
+          <div class="w-full">
+            <div
+              class="w-full px-4 py-3 bg-white text-xl font-semibold pb-5 border-b-2 border-dashed border-gray-300 rounded-lg"
+            >
+              Question-3: what is event delegation in the DOM ?
+            </div>
+            <div class="px-3 py-4 bg-white leading-9 text-lg">
+                In the DOM (Document Object Model), "event delegation" is a technique where you attach a single event listener to a parent element, allowing it to capture events that occur on any of its child elements, instead of adding separate listeners to each child element individually; this leverages the "event bubbling" mechanism where events triggered on a child element propagate up to its parent in the DOM tree, making it efficient for handling events on dynamically added elements. 
+            </div>
+          </div>
+          <div class="w-full">
+            <div
+              class="w-full px-4 py-3 bg-white text-xl font-semibold pb-5 border-b-2 border-dashed border-gray-300 rounded-lg"
+            >
+              Question-4:  what is event bubbling in the DOM?
+            </div>
+            <div class="px-3 py-4 bg-white leading-9 text-lg">
+                In the DOM (Document Object Model), "event bubbling" refers to the process where an event triggered on a child element travels up the DOM hierarchy, triggering event handlers on its parent elements successively until it reaches the topmost element (usually the document), allowing a single event listener on a parent element to handle events from its child elements. 
+                Key points about event bubbling:
+                Propagation:
+                When an event occurs on an element, it "bubbles up" through the DOM tree to its parent elements. 
+                Event Handlers:
+                If a parent element has an event listener set for the specific event type, it will be triggered as the event bubbles up. 
+                Efficiency:
+                This allows developers to attach a single event listener to a parent element to handle events from multiple child elements, keeping code cleaner and more efficient.     
+            </div>
+          </div>
+      
+        </div>
+      </div>
+    </section>
+    <script src="java.js"></script>
+  </body>
+</html>
